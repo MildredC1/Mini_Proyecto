@@ -43,11 +43,41 @@ app.get('/', (req, res) => {
 })
 
 app.get('/usuarios', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'usuarios.html'))
+    const query = "SELECT * FROM aprendiendo_sql.usuarios;"
+    conexion.query(query, (err, resultado) => {
+        if (err) {
+            res.status(500).send("Error al obtener los usuarios desde Base de Datos")
+        }
+        else {
+            res.json(resultado)
+        }
+    })
+})
+
+app.get('/empresas', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'empresa.html'))
+})
+
+app.get('/crear_usuario', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'crear_usuario.html'))
 })
 
 app.post('/create', (req, res) => {
-    res.send("Usuarios agregado correctamente")
+    console.log("req.body", req.body)
+    const {nombre, edad, altura, correo, empresa_id} = req.body
+    console.log("{nombre, edad, altura, correo, empresa_id}:", {nombre, edad, altura, correo, empresa_id})
+    const query = "INSERT INTO aprendiendo_sql.usuarios (nombre, edad, altura, correo, empresa_id) VALUES (?,?,?,?,?)"
+    console.log("query", query)
+
+    conexion.query(query, [nombre, edad, altura, correo, empresa_id], (err, resultado) => {
+        if (err) {
+            console.log("Error: ", err)
+            res.status(500).send("Error al insertar datos del usuario")
+        }
+        else {
+            res.send("Usuarios agregado correctamente")
+        }
+    })
 })
 
 app.listen(PORT, HOST, () => {
