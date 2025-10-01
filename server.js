@@ -27,7 +27,7 @@ app.get('/usuarios', (req, res) => {
 
 
 app.post('/create', (req, res) => {
-    res.json({""})
+    res.send("Usuarios agregado correctamente")
 })
 
 app.listen(PORT, HOST, () => {
