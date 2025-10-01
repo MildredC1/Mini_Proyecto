@@ -4,7 +4,8 @@
   "description": "**Creado con Express, Node, HTML y CSS**  \r Debe incluir:\r * Pagina Home\r * Pagina Usuarios: los usuarios se listen con nombre, correo y DNI -> (GET)\r * Pagina Usuario/id: mostrar información completa del usuario (usuario, edad, altura, correo, foto). Actualizar la base de datos y vamos a /img/img.png -> GET\r * Pagina Create: crear un nuevo usuario (POST)\r * Repositorio Github: crear y asignar las historias de usuario con integracion continua",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node server.js",
+    "server": "nodemon server.js"
   },
   "repository": {
     "type": "git",
