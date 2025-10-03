@@ -55,7 +55,15 @@ app.get('/usuarios', (req, res) => {
 })
 
 app.get('/empresas', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'empresa.html'))
+    const query = "SELECT * FROM aprendiendo_sql.empresa;"
+    conexion.query(query, (err, resultado) => {
+        if (err) {
+            res.status(500).send("Error al obtener las empresas desde Base de Datos")
+        }
+        else {
+            res.json(resultado)
+        }
+    })
 })
 
 app.get('/crear_usuario', (req, res) => {
