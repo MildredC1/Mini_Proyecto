@@ -1,0 +1,195 @@
+/* ==================================== */
+/* 1. Variables y Estilos Base          */
+/* ==================================== */
+
+:root {
+  --neon-violeta: #8a2be2;   /* Violeta base/mediano */
+  --neon-magenta: #ff00ff;   /* Neón brillante/fuerte */
+  --color-fondo: #111;       /* Negro muy oscuro */
+  --color-texto: #fff;       /* Blanco */
+}
+
+/* Estilos Generales */
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Quita el subrayado por defecto en todos los enlaces */
+a {
+    text-decoration: none;
+    color: var(--color-texto);
+    transition: color 0.3s ease;
+}
+
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.9); /* Negro semitransparente para efecto 'vidrio' */
+  border-bottom: 2px solid var(--neon-violeta);
+  padding: 10px 0;
+  box-shadow: 0 0 15px var(--neon-violeta); /* Sombra neón */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin: 0 30px;
+}
+
+/* Estilo y Animación de Botones/Enlaces de Navegación */
+nav li a {
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 8px 15px;
+  display: inline-block;
+  border: 2px solid transparent;
+  transition: 0.5s ease-in-out;
+}
+
+nav li a:hover {
+  color: var(--neon-magenta);
+  border: 2px solid var(--neon-magenta);
+  text-shadow: 0 0 8px var(--neon-magenta);
+  box-shadow: 0 0 10px var(--neon-magenta);
+  /* Aplicamos la animación de pulso */
+  animation: pulsoNeon 1.5s infinite alternate;
+}
+
+/* Definición de la Animación de Pulso Neón */
+@keyframes pulsoNeon {
+  from {
+    box-shadow: 0 0 5px var(--neon-violeta), 0 0 10px var(--neon-violeta);
+  }
+  to {
+    box-shadow: 0 0 15px var(--neon-magenta), 0 0 30px var(--neon-magenta);
+  }
+}
+
+/* ==================================== */
+/* 3. Estilos del Contenido Principal   */
+/* ==================================== */
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente */
+    padding: 40px 20px;
+    min-height: 70vh; /* Asegura que el contenido principal ocupe espacio */
+}
+
+h1 {
+    color: var(--neon-violeta);
+    text-shadow: 0 0 10px var(--neon-violeta);
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+/* Estilos del Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre los elementos */
+    padding: 30px;
+    background-color: #1a1a1a; /* Negro un poco más claro para contraste */
+    border: 1px solid var(--neon-violeta);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.5); /* Sombra sutil neón */
+    width: 100%;
+    max-width: 400px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
+    font-weight: 300;
+    color: var(--color-texto);
+}
+
+input[type="text"], 
+input[type="number"], 
+input[type="email"] {
+    background-color: #222; /* Fondo de input negro */
+    border: 1px solid var(--neon-violeta);
+    color: var(--color-texto);
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    border-color: var(--neon-magenta);
+    box-shadow: 0 0 5px var(--neon-magenta);
+    outline: none; /* Quita el contorno por defecto del navegador */
+}
+
+/* Estilo y Animación del Botón de Envio */
+button[type="submit"] {
+    background-color: var(--neon-violeta);
+    color: var(--color-texto);
+    font-size: 1.1em;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    
+    /* Prepara el botón para la animación */
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 10px var(--neon-violeta);
+}
+
+button[type="submit"]:hover {
+    background-color: var(--neon-magenta);
+    box-shadow: 0 0 15px var(--neon-magenta), 0 0 30px var(--neon-magenta);
+    transform: scale(1.05); /* Ligeramente más grande al pasar el mouse */
+    animation: pulsoNeon 1.5s infinite alternate; /* Aplica la animación neón */
+}
+
+/* ==================================== */
+/* 4. Estilos del Pie de Página (Footer) */
+/* ==================================== */
+
+footer {
+    background-color: rgba(0, 0, 0, 0.9);
+    border-top: 2px solid var(--neon-violeta);
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 0 15px var(--neon-violeta);
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #bbb; /* Gris claro */
+}
+
+/* Navegación del Footer (Enlaces sociales) */
+footer nav a {
+    color: var(--neon-violeta);
+
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+footer nav a:hover {
+    color: var(--neon-magenta);
+    text-shadow: 0 0 8px var(--neon-magenta);
+}

@@ -1,0 +1,19 @@
+/* Agrega estos estilos al final de tu archivo styles.css */
+
+main h1 {
+    /* Aquí se aplica el mismo estilo neón que usamos para el título del formulario */
+    color: var(--neon-violeta);
+    text-shadow: 0 0 15px var(--neon-violeta), 0 0 30px rgba(138, 43, 226, 0.5); 
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+main p {
+    font-size: 1.1em;
+    color: #ccc; /* Gris claro */
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
