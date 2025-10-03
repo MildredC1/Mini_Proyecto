@@ -4,11 +4,13 @@
   <meta charset="UTF-8">
   <title>Formulario de Usuario</title>
 </head>
+
 <body>
   <nav >
     <ul>
       <li><a href="/Mini_Proyecto/public/index.html">Inicio</a></li>
-      <li><a href="/Mini_Proyecto/public/empresa.html"> Empresas</a></li>
+      <li><a href="#/usuarios"> Ver usuarios</a></li>
+      <li><a href="#/empresas"> Ver empresas</a></li>
     </ul>
   </nav>
 
@@ -17,24 +19,30 @@
       <label>Nombre:
         <input type="text" name="nombre" required>
       </label>
-
+      <br>
       <label>Edad:
-        <input type="number" name="edad" min="0" >
+        <input type="number" name="edad" min="0" required>
       </label>
-
+      <br>
       <label>Altura:
-        <input type="number" name="altura" step="0.01" min="0">
+        <input type="number" name="altura" step="0.01" min="0" required>
       </label>
-
+      <br>
       <label>Correo:
         <input type="email" name="correo" required>
       </label>
-
-      <label>Id_Empresa:
-        <input type="number" name="empresa_id" >
+      <br>
+      <label>Empresa:
+        <input type="text" name="empresa" >
       </label>
+      <br>
+        <label>Imagen:
+        <input type="text" name="imagen" placeholder="Agrega una imagen" >
+      </label>
+      <br>
 
-      <button type="submit">Agregar Usuario</button>
+      <button type="submit">Guardar Usuario</button>
+      <br>
     </form>
   </main>
 <footer id="estilos" >
